@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estación meteorológica · Atardecer</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#231e43;color:#fff6f0;font-family:Segoe UI,Arial,sans-serif;min-height:100svh}
+.landscape{position:fixed;inset:0;overflow:hidden;z-index:-1;background:linear-gradient(180deg,#25264d 0%,#65476f 35%,#c67583 61%,#f8ac83 81%,#f4be8e 100%)}
+.glow{position:absolute;width:76vw;height:76vw;left:48%;top:12%;transform:translateX(-50%);background:radial-gradient(circle,#ffdba64d,transparent 63%)}
+.sun{position:absolute;left:73%;top:48%;width:clamp(120px,17vw,250px);aspect-ratio:1;border-radius:50%;background:linear-gradient(#ffdfad,#ffb98e);box-shadow:0 0 85px #ffcb9255}
+.cloud{position:absolute;height:2px;background:linear-gradient(90deg,transparent,#ffc4bc55,transparent);width:38%;top:32%;left:55%;box-shadow:0 15px 22px 4px #f5b4b322}.cloud.second{top:48%;left:2%;width:29%}
+.mountains{position:absolute;bottom:0;width:100%;height:34%;background:#684967;clip-path:polygon(0 38%,12% 61%,27% 28%,42% 68%,61% 42%,77% 65%,91% 31%,100% 49%,100% 100%,0 100%)}
+.mountains.front{height:23%;background:#322c4b;clip-path:polygon(0 48%,16% 26%,33% 66%,49% 41%,65% 78%,85% 30%,100% 50%,100% 100%,0 100%)}
+main{max-width:1180px;margin:auto;padding:38px 40px 26px;min-height:100svh;display:flex;flex-direction:column}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;letter-spacing:.4px}.brand svg{width:29px;height:29px;color:#ffd0a1}.preview{font-size:12px;padding:8px 13px;border:1px solid #ffffff35;border-radius:30px;background:#29233e55}
+.intro{padding:85px 0 44px}.eyebrow{color:#ffdbbe;letter-spacing:3px;font-size:11px;font-weight:600;text-transform:uppercase}h1{font-size:clamp(36px,5vw,62px);line-height:1.08;letter-spacing:-2px;font-weight:500;margin:17px 0 18px}.intro p{font-size:16px;line-height:1.7;color:#f5e3e9;margin:0;max-width:480px}
+.readings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{position:relative;padding:28px;border-radius:22px;border:1px solid #fff3e63d;background:linear-gradient(130deg,#332b4edf,#382c4fbf);box-shadow:0 18px 40px #251e4326;backdrop-filter:blur(18px)}
+.card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.card h2{font-size:16px;font-weight:500;margin:0;color:#f4e6ec}.icon{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:#ffbd9120;color:#ffca9e}.icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.pressure .icon{color:#e6c9ff;background:#dec0ff19}.altitude .icon{color:#bedcfb;background:#bbd9ff19}
+.value{font-size:clamp(35px,4.1vw,53px);letter-spacing:-2px;font-weight:500;margin:28px 0 25px;white-space:nowrap;font-variant-numeric:tabular-nums}.unit{font-size:20px;letter-spacing:0;color:#efdae5;font-weight:400;margin-left:6px}.description{border-top:1px solid #ffffff21;padding-top:17px;margin:0;font-size:12px;color:#e5d4e2;letter-spacing:.2px}
+.note{font-size:12px;margin:23px 0;color:#fff0e7;display:flex;align-items:center;gap:8px}.note::before{content:'';width:6px;height:6px;border-radius:50%;background:#ffd0aa;flex-shrink:0}footer{margin-top:auto;padding-top:65px;display:flex;justify-content:space-between;gap:12px;font-size:11px;color:#d4c8dd;letter-spacing:.5px}
+@media(min-width:1450px){.intro{padding-top:120px}}@media(max-width:760px){main{padding:25px 22px}.intro{padding:55px 0 30px}h1{letter-spacing:-1px}.readings{grid-template-columns:1fr}.card{padding:23px}.value{font-size:46px;margin:17px 0}.sun{left:65%;top:24%}.preview{font-size:10px}.brand{font-size:12px}footer{padding-top:32px;flex-wrap:wrap}.landscape{background:linear-gradient(#25264d,#99637c 60%,#eea580)}.mountains{height:25%}}
+.intro{padding:70px 0 45px;text-align:center}h1{font-size:clamp(28px,4vw,42px);letter-spacing:-1px;margin:0}.card{padding:28px}.value{margin:28px 0 8px}.note{justify-content:center;font-size:11px;margin-top:24px;color:#fff0e7}@media(max-width:760px){.intro{padding:25px 0 30px}.card{padding:23px}.value{margin:18px 0 5px}} </style>
+</head>
+<body>
+<div class="landscape" aria-hidden="true"><div class="glow"></div><div class="sun"></div><div class="cloud"></div><div class="cloud second"></div><div class="mountains"></div><div class="mountains front"></div></div>
+<main>
+
+<section class="intro"><h1>Estación meteorológica</h1></section>
+<section class="readings" aria-label="Mediciones meteorológicas">
+<article class="card"><div class="card-top"><h2>Temperatura</h2><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14.5V5a3 3 0 0 1 6 0v9.5a5 5 0 1 1-6 0Z"/><path d="M12 8v10"/><circle cx="12" cy="18" r="1.5"/></svg></span></div><p class="value"><span id="TemperaturaId">—</span><span class="unit">°C</span></p></article>
+<article class="card pressure"><div class="card-top"><h2>Presión</h2><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19a10 10 0 1 1 16 0Z"/><path d="m12 14 4-5M5 11l2 1M12 4v3M19 11l-2 1"/><circle cx="12" cy="14" r="1.5"/></svg></span></div><p class="value"><span id="PresionId">—</span><span class="unit">mmHg</span></p></article>
+<article class="card altitude"><div class="card-top"><h2>Altitud</h2><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 20 8-15 5 9 3-5 5 11ZM7 11l3 2 3-2"/></svg></span></div><p class="value"><span id="AltitudId">—</span><span class="unit">m</span></p></article>
+</section>
+<p class="note" id="estado" role="status">Conectando con la estación…</p>
+
+</main>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script><script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script><script src="js/HiFirebase.js"></script></body>
+</html>
+
+
